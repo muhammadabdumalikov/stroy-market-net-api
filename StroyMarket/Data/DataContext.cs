@@ -37,14 +37,13 @@ namespace MohirdevNet.Data
 
             modelBuilder.Entity<Category>(entity =>
             {
-                entity.ToTable("Categories");
-                entity.HasKey(e => e.category_id);
-                entity.Property(e => e.name).HasMaxLength(30).IsRequired();
-                entity.Property(e => e.slug).HasMaxLength(30).IsRequired(false);
-                entity.Property(e => e.parent_id).IsRequired(false);
-                entity.Property(e => e.icon).IsRequired();
+                entity.ToTable("categories");
+                entity.HasKey(e => e.id);
+                entity.Property(e => e.name_uz).HasMaxLength(30).IsRequired();
+                entity.Property(e => e.name_ru).HasMaxLength(30).IsRequired();
+                entity.Property(e => e.description).HasMaxLength(30).IsRequired(false);
                 entity.Property(e => e.created_at).HasDefaultValue<DateTime>(new DateTime());
-                entity.Property(e => e.updated_at).HasDefaultValue<DateTime>(new DateTime());
+                entity.Property(e => e.deleted_at).HasDefaultValue<DateTime>(new DateTime());
             });
         }
     }

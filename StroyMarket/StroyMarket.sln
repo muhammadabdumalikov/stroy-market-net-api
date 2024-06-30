@@ -1,25 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1706.4
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MohirdevNet", "MohirdevNet.csproj", "{49E94DEB-A522-4A5F-B010-D83D53A31259}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StroyMarket", "StroyMarket.csproj", "{BA97DCA1-F5D9-46B4-B927-675EB8870A4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{49E94DEB-A522-4A5F-B010-D83D53A31259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{49E94DEB-A522-4A5F-B010-D83D53A31259}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49E94DEB-A522-4A5F-B010-D83D53A31259}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49E94DEB-A522-4A5F-B010-D83D53A31259}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {21E3DA62-312A-43D4-B7C3-A3798AD3E074}
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA97DCA1-F5D9-46B4-B927-675EB8870A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA97DCA1-F5D9-46B4-B927-675EB8870A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA97DCA1-F5D9-46B4-B927-675EB8870A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA97DCA1-F5D9-46B4-B927-675EB8870A4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

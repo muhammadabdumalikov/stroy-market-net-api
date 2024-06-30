@@ -4,28 +4,29 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace MohirdevNet.Migrations
+namespace StroyMarket.Migrations
 {
-    public partial class InitialCreate : Migration
+    /// <inheritdoc />
+    public partial class InitialCategory : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Categories",
+                name: "categories",
                 columns: table => new
                 {
-                    category_id = table.Column<int>(type: "integer", nullable: false)
+                    id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    name = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
-                    slug = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: true),
-                    parent_id = table.Column<string>(type: "text", nullable: true),
-                    icon = table.Column<string>(type: "text", nullable: false),
+                    name_uz = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
+                    name_ru = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
+                    description = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: true),
                     created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)),
-                    updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
+                    deleted_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.category_id);
+                    table.PrimaryKey("PK_categories", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -48,10 +49,11 @@ namespace MohirdevNet.Migrations
                 });
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "categories");
 
             migrationBuilder.DropTable(
                 name: "Users");

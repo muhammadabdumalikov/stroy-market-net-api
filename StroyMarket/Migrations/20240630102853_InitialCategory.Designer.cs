@@ -9,58 +9,57 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace MohirdevNet.Migrations
+namespace StroyMarket.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220927100801_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240630102853_InitialCategory")]
+    partial class InitialCategory
     {
+        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.8")
+                .HasAnnotation("ProductVersion", "8.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("MohirdevNet.Model.Category", b =>
                 {
-                    b.Property<int>("category_id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("category_id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
                     b.Property<DateTime>("created_at")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
-                    b.Property<string>("icon")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("name")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("character varying(30)");
-
-                    b.Property<string>("parent_id")
-                        .HasColumnType("text");
-
-                    b.Property<string>("slug")
-                        .HasMaxLength(30)
-                        .HasColumnType("character varying(30)");
-
-                    b.Property<DateTime>("updated_at")
+                    b.Property<DateTime>("deleted_at")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
-                    b.HasKey("category_id");
+                    b.Property<string>("description")
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
 
-                    b.ToTable("Categories", (string)null);
+                    b.Property<string>("name_ru")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
+
+                    b.Property<string>("name_uz")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("categories", (string)null);
                 });
 
             modelBuilder.Entity("MohirdevNet.Model.User", b =>
