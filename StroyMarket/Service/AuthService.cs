@@ -1,16 +1,16 @@
-﻿using MohirdevNet.Dto;
-using MohirdevNet.Enums;
-using MohirdevNet.Exceptions;
-using MohirdevNet.Helpers;
-using MohirdevNet.Interfaces.Repository;
-using MohirdevNet.Interfaces.Service;
-using MohirdevNet.Model;
+﻿using StroyMarket.Dto;
+using StroyMarket.Enums;
+using StroyMarket.Exceptions;
+using StroyMarket.Helpers;
+using StroyMarket.Interfaces.Repository;
+using StroyMarket.Interfaces.Service;
+using StroyMarket.Model;
 using System.Net;
 
-namespace MohirdevNet.Service
+namespace StroyMarket.Service
 {
     public class AuthService : IAuthService
-    {   
+    {
         private readonly IAuthRepository _authRepo;
         public AuthService(IAuthRepository authRepo)
         {
@@ -42,11 +42,23 @@ namespace MohirdevNet.Service
                 throw new AppException("User not found", HttpStatusCode.NotFound);
             }
 
-            if(user.verification_code != code)
+            if (user.verification_code != code)
             {
                 throw new AppException("Incorrect code", HttpStatusCode.BadRequest);
             }
             return this._authRepo.Verify(user.user_id);
+        }
+
+        public User Find(string phone)
+        {
+            var user = _authRepo.GetOne(phone);
+
+            if (user == null)
+            {
+                throw new AppException("User not found", HttpStatusCode.NotFound);
+            }
+    
+            return user;
         }
     }
 }

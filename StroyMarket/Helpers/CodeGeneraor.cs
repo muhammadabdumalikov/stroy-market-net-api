@@ -1,4 +1,4 @@
-﻿namespace MohirdevNet.Helpers
+﻿namespace StroyMarket.Helpers
 {
     public class CodeGeneraor
     {

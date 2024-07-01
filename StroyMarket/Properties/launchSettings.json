@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "MohirdevNet": {
+    "StroyMarket": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

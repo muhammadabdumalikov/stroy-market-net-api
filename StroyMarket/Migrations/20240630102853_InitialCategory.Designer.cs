@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MohirdevNet.Data;
+using StroyMarket.Data;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -25,7 +25,7 @@ namespace StroyMarket.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("MohirdevNet.Model.Category", b =>
+            modelBuilder.Entity("StroyMarket.Model.Category", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -62,7 +62,7 @@ namespace StroyMarket.Migrations
                     b.ToTable("categories", (string)null);
                 });
 
-            modelBuilder.Entity("MohirdevNet.Model.User", b =>
+            modelBuilder.Entity("StroyMarket.Model.User", b =>
                 {
                     b.Property<int>("user_id")
                         .ValueGeneratedOnAdd()

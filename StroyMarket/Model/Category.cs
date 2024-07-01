@@ -1,8 +1,8 @@
-﻿using MohirdevNet.Enums;
+﻿using StroyMarket.Enums;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace MohirdevNet.Model
+namespace StroyMarket.Model
 {
     public class Category
     {

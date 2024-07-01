@@ -1,4 +1,4 @@
-﻿namespace MohirdevNet.Dto
+﻿namespace StroyMarket.Dto
 {
     public class UserDto
     {

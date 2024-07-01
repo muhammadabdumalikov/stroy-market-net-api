@@ -1,17 +1,17 @@
-﻿using MohirdevNet.Data;
-using MohirdevNet.Interfaces.Repository;
-using MohirdevNet.Model;
+﻿using StroyMarket.Data;
+using StroyMarket.Interfaces.Repository;
+using StroyMarket.Model;
 
-namespace MohirdevNet.Repository
+namespace StroyMarket.Repository
 {
-    public class AuthRepository: IAuthRepository
+    public class AuthRepository : IAuthRepository
     {
         private DataContext _context;
 
         public AuthRepository(DataContext context)
         {
             _context = context;
-        } 
+        }
 
         public bool Create(User user)
         {

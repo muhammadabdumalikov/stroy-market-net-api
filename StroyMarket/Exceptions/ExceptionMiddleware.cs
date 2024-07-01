@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Text.Json;
 
-namespace MohirdevNet.Exceptions
+namespace StroyMarket.Exceptions
 {
     public class ErrorHandlerMiddleware
     {

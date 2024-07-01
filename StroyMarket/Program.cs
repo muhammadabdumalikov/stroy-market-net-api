@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using MohirdevNet.Data;
-using MohirdevNet.Exceptions;
-using MohirdevNet.Interfaces.Repository;
-using MohirdevNet.Interfaces.Service;
-using MohirdevNet.Repository;
-using MohirdevNet.Service;
+using StroyMarket.Data;
+using StroyMarket.Exceptions;
+using StroyMarket.Interfaces.Repository;
+using StroyMarket.Interfaces.Service;
+using StroyMarket.Repository;
+using StroyMarket.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +21,18 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("WebApiDatabase"));
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder =>
+        {
+            builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -31,6 +43,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 

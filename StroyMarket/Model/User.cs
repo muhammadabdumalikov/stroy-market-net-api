@@ -1,8 +1,8 @@
-﻿using MohirdevNet.Enums;
+﻿using StroyMarket.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MohirdevNet.Model
+namespace StroyMarket.Model
 {
     public class User
     {

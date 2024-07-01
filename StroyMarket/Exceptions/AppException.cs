@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace MohirdevNet.Exceptions
+namespace StroyMarket.Exceptions
 {
     public class AppException : Exception
     {

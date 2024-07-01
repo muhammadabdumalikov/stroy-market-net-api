@@ -1,6 +1,6 @@
-﻿using MohirdevNet.Model;
+﻿using StroyMarket.Model;
 
-namespace MohirdevNet.Interfaces.Repository
+namespace StroyMarket.Interfaces.Repository
 {
     public interface IAuthRepository
     {

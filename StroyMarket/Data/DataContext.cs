@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MohirdevNet.Enums;
-using MohirdevNet.Model;
+using StroyMarket.Enums;
+using StroyMarket.Model;
 
-namespace MohirdevNet.Data
+namespace StroyMarket.Data
 {
     public class DataContext : DbContext
     {
@@ -17,7 +17,7 @@ namespace MohirdevNet.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Database=mohirdevnet;Username=postgres;Password=4324");
+            optionsBuilder.UseNpgsql("Host=tiny.db.elephantsql.com;Database=hbbvqrol;Username=hbbvqrol;Password=8UxRew7pJC38TkqJ9_ZyNpT09qhfsKBP");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
